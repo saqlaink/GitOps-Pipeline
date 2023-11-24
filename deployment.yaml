@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gitops-pipeline
+  name: gitops-pipeline:1.0.0-11
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: gitops-pipeline-app
+      app: gitops-pipeline:1.0.0-11
   template:
     metadata:
       labels:
-        app: gitops-pipeline-app
+        app: gitops-pipeline:1.0.0-11
     spec:
       containers:
-      - name: gitops-pipeline-app
-        image: saqlainkhan/pipeline:1.0.0-8
+      - name: gitops-pipeline:1.0.0-11
+        image: saqlainkhan/pipeline:1.0.0-11
         resources:
           limits:
             memory: "256Mi"
