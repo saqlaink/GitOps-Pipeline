@@ -15,7 +15,7 @@ pipeline {
 
     stage("Checkout from SCM"){
       steps{
-        git branch: 'main', credentialsId: 'github-pat', url: 'https://github.com/saqlaink/GitOps-Pipeline'
+        git branch: 'main', credentialsId: 'github', url: 'https://github.com/saqlaink/GitOps-Pipeline'
       }
     }
 
@@ -37,7 +37,7 @@ pipeline {
           git add deployment.yaml
           git commit -m "Updated deployment.yaml file"
         """
-        withCredentials([gitUsernamePassword(credentialsId: 'github-pat', gitToolName: 'Default')]) {
+        withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
           sh "git push https://github.com/saqlaink/GitOps-Pipeline main"
         }
       }
