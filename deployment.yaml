@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: e2e-app
-        image: saqlainkhan/pipeline:1.0.0-12
+        image: saqlainkhan/pipeline:1.0.0-13
         resources:
           limits:
             memory: "256Mi"
